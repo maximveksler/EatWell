@@ -1,13 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 import Header from './Header'
+import RestaurantList from './RestaurantList'
 
-var App = React.createClass({
-  render: function() {
+class App extends React.Component {
+  render() {
     return (
-      <Header />
+      <div className="container-fluid">
+        <Header />
+        <RestaurantList />
+      </div>
     )
   }
-})
+}
 
 export default App
