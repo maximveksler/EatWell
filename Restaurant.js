@@ -5,35 +5,34 @@ class Restaurant extends React.Component {
   constructor(props) {
     super(props)
     this.displayName = "Restaurant"
+  }
 
-    this.model = props.model
+  render() {
+    // helper for code simplicity.
+    var model = this.props.model
 
+    // Controller calculats food icon for HTML View presentation.
     var foodTypeImage = "";
-    if (this.model.foodType === "Burger") {
+    if (model.foodType === "Burger") {
       foodTypeImage = "assets/img/Burger.png"
     } else {
       foodTypeImage = "http://placeponi.es/48/48"
     }
 
-    this.state = {
-      foodTypeImage: foodTypeImage
-    }
-  }
-
-  render() {
+    // Prepare rating JSX
     var ratings = [];
-    for (var i=0; i < this.model.rating; i++) {
+    for (var i=0; i < model.rating; i++) {
         ratings.push(<span className="glyphicon glyphicon-star" key={i}/>);
     }
 
     return (
       <li className="media">
         <div className="media-left">
-          <img className="media-object" src={this.state.foodTypeImage} />
+          <img className="media-object" src={foodTypeImage} />
         </div>
 
         <div className="media-body">
-          <h4 className="media-heading">{this.model.name}</h4>
+          <h4 className="media-heading">{model.name}</h4>
 
           <p>
             Rating: {ratings}
