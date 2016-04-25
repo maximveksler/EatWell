@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react'
 import RestaurantModel from './RestaurantModel'
 
@@ -23,10 +24,7 @@ class Restaurant extends React.Component {
     var foodTypeImage = this.iconFromFoodType(model.foodType)
     
     // Prepare rating JSX
-    var ratings = [];
-    for (var i=0; i < model.rating; i++) {
-        ratings.push(<span className="glyphicon glyphicon-star" key={i}/>);
-    }
+    var ratings = _.times(model.rating, i => <span className="glyphicon glyphicon-star" key={i} />)
 
     return (
       <li className="media">
