@@ -6,7 +6,8 @@ var backgroundImageCSS = {
 class Header extends React.Component {
   render() {
     return (
-      <div className="text-center eat-header-caption">
+      <div className="jumbotron text-center eat-header-caption">
+        <div className="container">
           <div className="row" >
             <div className="col-md-12" >
               <div className="caption">
@@ -15,7 +16,7 @@ class Header extends React.Component {
               </div>
             </div>
           </div>
-
+        </div>
       </div>
     );
   }

@@ -1,4 +1,4 @@
 .eat-header-caption {
-  background: url("assets/img/cover.png");
-  background-size: "cover"
+  background: url("assets/img/cover.png") center top no-repeat;
+  background-size: cover;
 }
