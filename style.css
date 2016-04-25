@@ -2,3 +2,13 @@
   background: url("assets/img/cover.png") center center no-repeat;
   background-size: cover;
 }
+
+.restaurant-map-display {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.selected {
+  background-color: #ecf0f1;
+}

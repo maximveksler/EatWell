@@ -26,12 +26,12 @@ class Restaurant extends React.Component {
     }
 
     return (
-      <li className="media">
+      <li className="media" onClick={this.props.onClick}>
         <div className="media-left">
           <img className="media-object" src={foodTypeImage} />
         </div>
 
-        <div className="media-body">
+        <div className={this.props.selected ? "media-body selected" : "media-body"}>
           <h4 className="media-heading">{model.name}</h4>
 
           <p>
@@ -48,7 +48,7 @@ Restaurant.propTypes = {
 }
 
 Restaurant.defaultProps = {
-  restaurant : new RestaurantModel("NameOfPlace", "Burger", 2)
+  restaurant : new RestaurantModel("NameOfPlace", "Burger", 2, "Dubnov 7, Tel Aviv-Yafo, Israel")
 }
 
 export default Restaurant
