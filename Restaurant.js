@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react'
 import RestaurantModel from './RestaurantModel'
 
@@ -7,23 +8,23 @@ class Restaurant extends React.Component {
     this.displayName = "Restaurant"
   }
 
+  iconFromFoodType(foodType) {
+    if (foodType === "Burger") {
+      return "assets/img/Burger.png"
+    } else {
+      return "http://placeponi.es/48/48"
+    }
+  }
+  
   render() {
     // helper for code simplicity.
     var model = this.props.model
 
     // Controller calculats food icon for HTML View presentation.
-    var foodTypeImage = "";
-    if (model.foodType === "Burger") {
-      foodTypeImage = "assets/img/Burger.png"
-    } else {
-      foodTypeImage = "http://placeponi.es/48/48"
-    }
-
+    var foodTypeImage = this.iconFromFoodType(model.foodType)
+    
     // Prepare rating JSX
-    var ratings = [];
-    for (var i=0; i < model.rating; i++) {
-        ratings.push(<span className="glyphicon glyphicon-star" key={i}/>);
-    }
+    var ratings = _.times(model.rating, i => <span className="glyphicon glyphicon-star" key={i} />)
 
     return (
       <li className="media">

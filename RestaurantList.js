@@ -18,13 +18,13 @@ class RestaurantList extends React.Component {
   }
 
   render() {
+    var restaurants = this.state.restaurants.map((restaurant, i) => <Restaurant model={restaurant} key={i} />)
+      
     return (
       <div className="row">
         <div className="col-md-7">
           <ul class="media-list">
-            {this.state.restaurants.map(function(restaurant, i) {
-              return <Restaurant model={restaurant} key={i} />
-            })}
+            {restaurants}
           </ul>
         </div>
       </div>
