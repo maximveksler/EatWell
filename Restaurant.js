@@ -9,9 +9,9 @@ class Restaurant extends React.Component {
 
   iconFromFoodType(foodType) {
     if (foodType === "Burger") {
-      return foodTypeImage = "assets/img/Burger.png"
+      return "assets/img/Burger.png"
     } else {
-      return foodTypeImage = "http://placeponi.es/48/48"
+      return "http://placeponi.es/48/48"
     }
   }
   
@@ -20,7 +20,7 @@ class Restaurant extends React.Component {
     var model = this.props.model
 
     // Controller calculats food icon for HTML View presentation.
-    var foodTypeImage = iconFromFoodType(model.foodType)
+    var foodTypeImage = this.iconFromFoodType(model.foodType)
     
     // Prepare rating JSX
     var ratings = [];
