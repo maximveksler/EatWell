@@ -5,8 +5,8 @@ module.exports = {
     filename: "index.js"
   },
   devServer: {
-    inline: true,
-    port: 3333
+    inline: true
+//    port: 3333
   },
   module: {
     loaders: [
