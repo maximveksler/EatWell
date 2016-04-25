@@ -12,7 +12,7 @@ module.exports = {
     loaders: [
       {
         // "test" is commonly used to match the file extension
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
         query: {
