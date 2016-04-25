@@ -7,18 +7,21 @@ class Restaurant extends React.Component {
     this.displayName = "Restaurant"
   }
 
+  iconFromFoodType(foodType) {
+    if (foodType === "Burger") {
+      return foodTypeImage = "assets/img/Burger.png"
+    } else {
+      return foodTypeImage = "http://placeponi.es/48/48"
+    }
+  }
+  
   render() {
     // helper for code simplicity.
     var model = this.props.model
 
     // Controller calculats food icon for HTML View presentation.
-    var foodTypeImage = "";
-    if (model.foodType === "Burger") {
-      foodTypeImage = "assets/img/Burger.png"
-    } else {
-      foodTypeImage = "http://placeponi.es/48/48"
-    }
-
+    var foodTypeImage = iconFromFoodType(model.foodType)
+    
     // Prepare rating JSX
     var ratings = [];
     for (var i=0; i < model.rating; i++) {
