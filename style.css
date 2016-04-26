@@ -9,6 +9,6 @@
   flex-direction: column;
 }
 
-.selected {
+.selected-restaurant-row {
   background-color: #ecf0f1;
 }
