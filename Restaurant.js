@@ -31,7 +31,7 @@ class Restaurant extends React.Component {
           <img className="media-object" src={foodTypeImage} />
         </div>
 
-        <div className={this.props.selected ? "media-body selected" : "media-body"}>
+        <div className={"media-body" + (this.props.selected ? " selected" : "")}>
           <h4 className="media-heading">{model.name}</h4>
 
           <p>
