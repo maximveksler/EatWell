@@ -9,11 +9,9 @@ class Header extends React.Component {
       <div className="jumbotron text-center eat-header-caption">
         <div className="container">
           <div className="row" >
-            <div className="col-md-12" >
-              <div className="caption">
-                <h1>EatWell</h1>
-                <h2>Eat what you love...</h2>
-              </div>
+            <div className="caption">
+              <h1>EatWell</h1>
+              <h2>Eat what you love...</h2>
             </div>
           </div>
         </div>
