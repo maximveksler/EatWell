@@ -18,14 +18,14 @@ class RestaurantList extends React.Component {
 
   render() {
     var restaurants = this.props.restaurants.map(
-              function(restaurant, i) {
+              (restaurant, i) => {
                 var selected = (this.state.selectedRestaurant == i)
                 return (<Restaurant
                   onClick={this.handleSelectedRestaurant.bind(this, restaurant, i)}
                   model={restaurant}
                   key={i}
                   selected={selected} />)
-              }, this)
+              })
                             
     return (
       <div className="row">
