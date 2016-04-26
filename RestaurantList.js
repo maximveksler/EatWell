@@ -17,12 +17,7 @@ class RestaurantList extends React.Component {
   }
 
   render() {
-    console.log(this.props.restaurants[this.state.selectedRestaurant].address)
-    return (
-      <div className="row">
-        <div className="col-md-7">
-          <ul className="media-list">
-            {this.props.restaurants.map(
+    var restaurants = this.props.restaurants.map(
               function(restaurant, i) {
                 var selected = (this.state.selectedRestaurant == i)
                 return (<Restaurant
@@ -31,7 +26,12 @@ class RestaurantList extends React.Component {
                   key={i}
                   selected={selected} />)
               }, this)
-            }
+                            
+    return (
+      <div className="row">
+        <div className="col-md-7">
+          <ul className="media-list">
+            {restaurants}
           </ul>
         </div>
         <div className="col-md-5">
@@ -43,10 +43,6 @@ class RestaurantList extends React.Component {
     )
   }
 }
-
-// RestaurantList.propTypes = {
-//   restaurants: React.PropTypes.instanceOf([RestaurantModel])
-// }
 
 RestaurantList.defaultProps = {
   restaurants : [
