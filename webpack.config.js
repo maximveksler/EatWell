@@ -8,6 +8,7 @@ module.exports = {
     inline: true
 //    port: 3333
   },
+  
   module: {
     loaders: [
       {
@@ -16,8 +17,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['es2015', 'react']
-	  plugins: ['lodash']
+          presets: ['es2015', 'react'],
+          plugins: ['lodash'] // https://github.com/lodash/babel-plugin-lodash
         }
       }
     ]

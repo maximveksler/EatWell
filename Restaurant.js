@@ -27,12 +27,12 @@ class Restaurant extends React.Component {
     var ratings = _.times(model.rating, i => <span className="glyphicon glyphicon-star" key={i} />)
 
     return (
-      <li className="media">
+      <li className="media" onClick={this.props.onClick}>
         <div className="media-left">
           <img className="media-object" src={foodTypeImage} />
         </div>
 
-        <div className="media-body">
+        <div className={"media-body" + (this.props.selected ? " selected-restaurant-row" : "")}>
           <h4 className="media-heading">{model.name}</h4>
 
           <p>
@@ -49,7 +49,7 @@ Restaurant.propTypes = {
 }
 
 Restaurant.defaultProps = {
-  restaurant : new RestaurantModel("NameOfPlace", "Burger", 2)
+  restaurant : new RestaurantModel("NameOfPlace", "Burger", 2, "Dubnov 7, Tel Aviv-Yafo, Israel")
 }
 
 export default Restaurant
